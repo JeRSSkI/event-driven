@@ -1,0 +1,34 @@
+{
+  "OrderCreated": {
+    "type": "object",
+    "properties": {
+      "type": {"const": "OrderCreated"},
+      "orderId": {"type": "string"},
+      "userId": {"type": "integer"},
+      "itemId": {"type": "integer"},
+      "qty": {"type": "integer"},
+      "ts": {"type": "string", "format": "date-time"}
+    },
+    "required": ["type","orderId","userId","itemId","qty","ts"]
+  },
+  "PaymentCaptured": {
+    "type": "object",
+    "properties": {
+      "type": {"const": "PaymentCaptured"},
+      "orderId": {"type": "string"},
+      "amount": {"type": "number"},
+      "ts": {"type": "string","format":"date-time"}
+    },
+    "required":["type","orderId","amount","ts"]
+  },
+  "EmailSent": {
+    "type":"object",
+    "properties":{
+      "type":{"const":"EmailSent"},
+      "orderId":{"type":"string"},
+      "to":{"type":"string"},
+      "ts":{"type":"string","format":"date-time"}
+    },
+    "required":["type","orderId","to","ts"]
+  }
+}
